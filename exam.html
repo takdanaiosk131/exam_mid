@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>My Title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+       crossorigin="anonymous">
+    <style>
+        #red {
+		   color: red
+		}
+        #blue {
+		   color: blue
+        }
+    </style>
+</head>
+<body>
+	<div align="right">
+		<select id="themeselector">
+		<option value="default">default</option>
+		<option value="red">red</option>
+		<option value="blue">blue</option>
+		</select>
+	</div>
+	
+
+	<p align="center">
+		A Subtitle
+		
+		A paragraph of <span id="default"> text </span> with an unassigned link.<br>
+		A second row of <span id="default"> text </span> with a web link
+	</p>
+	
+	
+	<script>
+		
+		let previous;
+        $("#themeselector").on("focus", function() {
+            previous = $(this).val();
+			console.log(previous);
+        }).change(function() {
+            let selected = $(this).val();
+			$("[id="+ previous +"]").attr('id', selected);
+			console.log(previous);
+			previous = selected;
+        })
+		
+	</script>
+</body>
+</html>
