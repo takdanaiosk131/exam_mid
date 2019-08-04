@@ -10,3 +10,4 @@ async function getText(){
 console.log(arr);
 console.log(x1000);
 console.log(getText());
+console.log('123')
